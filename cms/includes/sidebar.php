@@ -47,7 +47,7 @@
                                     
                                <?php } ?>
                                */
-                    
+                                
                                 while($row = mysqli_fetch_assoc($select_categories_sidebar_query)) {
                                     
                                    $cat_title = $row['cat_title'];

@@ -1,6 +1,4 @@
 
- 
-
 <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
@@ -33,10 +31,8 @@
                     ?>
                    
                    
-                   
-                   
                     <li>
-                        <a href="#">About</a>
+                        <a href="admin">Admin</a>
                     </li>
                     <li>
                         <a href="#">Services</a>
