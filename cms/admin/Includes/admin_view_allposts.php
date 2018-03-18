@@ -1,4 +1,4 @@
-   
+
 
 <!-- This table will list all the existing posts -->
 <table class = "table table-bordered table-hover"> 
@@ -26,10 +26,8 @@
     </tbody> 
 </table>
 
-
-
-
 <?php 
+
 
 if(isset($_GET['delete'])){
     $the_post_id = $_GET['delete'];

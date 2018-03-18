@@ -74,6 +74,7 @@
                                     //loading all categories to put into table...
                                     load_all_categories_for_table();
                                     ?>
+                                    
 
 
                                     <?php

@@ -11,6 +11,7 @@ function didQueryWork($query) {
     
 }
 
+//Categories related
 function insert_category() {
 
     global $connection;
@@ -78,9 +79,9 @@ function load_all_categories_for_table(){
         echo "<tr>";
         $cat_id = $row['cat_id'];
         $cat_title = $row['cat_title'];
+       
         echo "<td>{$cat_id}</td>";
         echo "<td>{$cat_title}</td>";
-
         //adding delete button...
         echo "<td> <a href ='admin_categories.php?delete= {$cat_id}'>Delete</a></td>";
         //adding edit button...
@@ -108,7 +109,7 @@ function update_category_title() {
 }
 
 
-
+//?
 function create_editspace_and_setlabel(){
 
     global $connection;
@@ -131,6 +132,7 @@ function create_editspace_and_setlabel(){
 <?php }}
 }
 
+//
 function get_allposts_and_display_in_table() {
     
     global $connection;
@@ -150,6 +152,16 @@ function get_allposts_and_display_in_table() {
         $post_comment_count = $row['post_comment_count'];
         $post_date = $row['post_date'];
 
+        
+        //getting the category title
+        $query = "SELECT * FROM categories WHERE cat_id = $post_category_id";
+        $select_category = mysqli_query($connection, $query);
+        
+        while($row = mysqli_fetch_array($select_category)){
+            //make sure there is only one
+            $post_category_id = $row['cat_title'];
+        }
+    
         echo "<tr>";
         echo "<td>{$post_id}</td>";
         echo "<td>{$post_author}</td>";
@@ -161,6 +173,7 @@ function get_allposts_and_display_in_table() {
         echo "<td>{$post_tags}</td>";
         echo "<td>{$post_comment_count}</td>";
         echo "<td>{$post_date}</td>";
+        echo "<td><a href ='admin_posts.php?source=edit_post&p_id={$post_id}'>Edit</a></td>";
         echo "<td><a href ='admin_posts.php?delete={$post_id}'>Delete</a></td>";
         echo "</tr>";
     }

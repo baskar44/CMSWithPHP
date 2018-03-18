@@ -41,8 +41,8 @@
                                 include "includes/admin_add_post.php";
                             break;
                                 
-                            case '100';
-                            echo "NICE 11";
+                            case 'edit_post';
+                                include "includes/admin_edit_post.php";
                             break;
                                 
                             case '200';
@@ -75,4 +75,3 @@
 
 </body>
 
-</html>
